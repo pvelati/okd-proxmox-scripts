@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ID_BOOTSTRAP=30000
+ID_MASTER0=30001
+ID_MASTER1=30002
+ID_MASTER2=30003
+ID_HAPROXY=29889
+
+array=( $ID_BOOTSTRAP $ID_MASTER0 $ID_MASTER1 $ID_MASTER2 $ID_HAPROXY )
+for i in "${array[@]}"
+do
+  qm stop $i
+  qm destroy $i
+done
